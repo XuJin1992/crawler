@@ -1,0 +1,24 @@
+create database crawler;
+
+CREATE TABLE `user`(
+`id` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '自增id',
+`user_name` VARCHAR(50) NOT NULL COMMENT '用户名',
+`password` VARCHAR(50) NOT NULL COMMENT '用户密码',
+PRIMARY KEY (`id`)
+)COMMENT='用户表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+CREATE TABLE `movie`(
+`id` BIGINT(20) NOT NULL AUTO_INCREMENT COMMENT '自增id',
+`score` DOUBLE NULL DEFAULT '0' COMMENT '评分',
+`crawler_origin` VARCHAR(50) NULL DEFAULT '0' COMMENT '爬虫来源',
+`movie_name` VARCHAR(50) NULL DEFAULT '0' COMMENT '电影名称',
+`category` VARCHAR(50) NOT NULL DEFAULT '0' COMMENT '分类',
+`link` VARCHAR(1024) NULL DEFAULT '0' COMMENT '爬虫url',
+`country` VARCHAR(50) NOT NULL DEFAULT '0' COMMENT '所述国度',
+PRIMARY KEY (`id`)
+)COMMENT='电影表'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=1024;
